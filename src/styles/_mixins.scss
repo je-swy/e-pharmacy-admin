@@ -1,0 +1,62 @@
+@use 'variables' as *;
+
+// Flex helpers
+@mixin flex($direction: row, $gap: 0) {
+    display: flex;
+    flex-direction: $direction;
+    gap: $gap;
+}
+
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin flex-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+// Card base
+@mixin card {
+    background-color: $color-white;
+    border-radius: $radius-lg;
+    border: 1px solid $color-border;
+    padding: 18px 14px;
+}
+
+// Dashed border
+@mixin dashed-border {
+    border: 1px dashed #9747FF;
+}
+
+// Typography
+@mixin text($size, $weight: 400, $color: $color-text) {
+    font-size: $size;
+    font-weight: $weight;
+    color: $color;
+}
+
+// Status badge
+@mixin badge($color, $bg) {
+    color: $color;
+    background-color: $bg;
+    border-radius: $radius-full;
+    padding: 2px 8px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+@mixin tablet {
+    @media (min-width: #{$bp-tablet}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: #{$bp-desktop}) {
+        @content;
+    }
+}
