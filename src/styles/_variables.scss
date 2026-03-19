@@ -5,6 +5,7 @@ $font-main: "Inter", sans-serif;
 $color-text: #1D1E21;
 $color-primary: #59B17A;
 $color-danger: #E85050;
+$color-text-secondary: rgba(29, 30, 33, 0.4);
 
 // Tints (10%)
 $color-primary-light: #59B17A1A;
@@ -19,6 +20,10 @@ $color-white: #FFFFFF;
 
 // Borders
 $color-border: $color-gray-1;
+$color-border-light: rgba(29, 30, 33, 0.1);
+
+// Shadows
+$shadow-btn: 0px -1px 7px rgba(71, 71, 71, 0.05);
 
 // Status colors
 $color-completed: #59B17A;

@@ -1,16 +1,7 @@
-import StatCard from './components/StatCard/StatCard'
+import SharedLayout from './components/SharedLayout/SharedLayout'
 
 function App() {
-  return (
-    <div style={{ padding: '20px' }}>
-      <StatCard
-        title="All products"
-        value={8430}
-        isActive={true}
-        icon={<span>📦</span>}
-      />
-    </div>
-  )
+    return <SharedLayout />
 }
 
-export default App
+export default App;
