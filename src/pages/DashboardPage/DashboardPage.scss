@@ -1,0 +1,16 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+
+.dashboard-stats {
+   display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    @include tablet {
+        @include flex($direction: row, $gap: 20px);
+
+        div {
+            max-width: 240px;
+        }
+    }
+}

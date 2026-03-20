@@ -5,11 +5,15 @@ interface StatCardProps {
   title: string;
   value: number;
   isActive: boolean;
+  onClick: () => void;
 }
 
-const StatCard = ({ icon, title, value, isActive }: StatCardProps) => {
+const StatCard = ({ icon, title, value, isActive, onClick }: StatCardProps) => {
   return (
-    <div className={`stat-card ${isActive ? 'active' : ''}`}>
+    <div
+      className={`stat-card ${isActive ? 'active' : ''}`}
+      onClick={onClick}
+    >
       <div className="stat-header">
         {icon}
         <span className="stat-title">{title}</span>

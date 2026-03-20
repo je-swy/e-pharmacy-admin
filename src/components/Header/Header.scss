@@ -36,7 +36,7 @@
     position: relative;
     z-index: 100;
 
-    @include desktop {
+    @include tablet {
       display: none;
     }
   }

@@ -1,0 +1,56 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.recent-customers-wrapper {
+    border-radius: $radius-lg;
+    overflow: hidden;
+    border: 1px solid $color-border-light;
+}
+
+.recent-customers {
+    width: 100%;
+    border-collapse: collapse;
+
+    caption {
+        background-color: $color-green-1;
+        padding: 20px;
+        text-align: left;
+        @include text(18px, 600, $color-text);
+    }
+
+    thead tr th,
+    tbody tr td {
+        padding: 16px 20px;
+        border-bottom: 1px solid $color-border-light;
+        border-right: 1px solid $color-border-light;
+
+        &:last-child {
+            border-right: none;
+        }
+        
+    }
+
+    thead {
+        background-color: $color-bg;
+        color: $color-text-secondary;
+        font-size: 12px;
+        text-align: left;
+    }
+
+    tbody tr:last-child td {
+        border-bottom: none;
+    }
+
+    tbody tr td img {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        object-fit: cover;
+        display: inline-block;
+    }
+
+    .recent-customers__name {
+        @include flex(row, 12px);
+        align-items: center;
+    }
+}
