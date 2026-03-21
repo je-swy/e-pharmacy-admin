@@ -1,0 +1,82 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.login {
+    height: 100vh;
+    background: $color-bg url('../../assets/elements/bg_login_element.svg') no-repeat;
+    background-position: bottom right;
+    padding: 24px 20px;
+
+    &-accent {
+        color: $color-primary;
+    }
+
+    &-header {
+        margin-bottom: 8px;
+        @include flex(row, 14px);
+        align-items: center;
+        margin-bottom: 92px;
+
+        h1 {
+            @include text(20px, 600, $color-text);
+        }
+
+        img {
+            width: 44px;
+            height: 44px;
+        }
+    }
+
+    &-main {
+        @include flex(column, 40px);
+        align-items: flex-start;
+
+        h2 {
+
+            @include text(24px, 600, $color-text);
+            line-height: 34px;
+
+            img {
+                width: 95px;
+                height: 93px;
+                display: inline;
+            }
+        }
+    }
+
+    &-form {
+        width: 100%;
+        max-width: 324px;
+        @include flex(column, 24px);
+
+        input {
+            width: 100%;
+        }
+    }
+
+    @include tablet {
+        padding: 24px 32px;
+
+        &-main {
+            @include flex(column, 50px);
+
+            h2 {
+                @include text(54px, 600, $color-text);
+                line-height: 60px;
+
+                img {
+                    width: 179px;
+                    height: 175px;
+                }
+            }
+        }
+    }
+
+    @include desktop {
+        padding: 28px 200px;
+
+        &-main {
+            @include flex(row, 150px);
+        }
+    }
+}

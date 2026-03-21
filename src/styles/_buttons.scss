@@ -1,0 +1,39 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.btn {
+    @include flex-center;
+    padding: 13px 26px;
+    border-radius: $radius-full;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+
+    &--primary {
+        background-color: $color-primary;
+        color: $color-white;
+
+        &:hover {
+            background-color: $color-button-primary;
+        }
+    }
+
+    &--secondary {
+        background-color: $color-gray-1;
+        color: $color-text-secondary;
+    }
+
+    &--outlined {
+        background-color: transparent;
+        border: 1px solid $color-primary;
+        color: $color-primary;
+    }
+
+    &--disabled {
+        background-color: $color-gray-2;
+        color: $color-text-secondary;
+        cursor: not-allowed;
+    }
+}

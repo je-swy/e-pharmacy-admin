@@ -3,6 +3,7 @@ import RecentCustomers from '../../components/RecentCustomers/RecentCustomers'
 import { stats } from '../../constants/stats'
 import { useState } from 'react'
 import './DashboardPage.scss'
+import IncomeExpenses from '../../components/IncomeExpenses/IncomeExpenses'
 
 const DashboardPage = () => {
     const [activeId, setActiveId] = useState(1)
@@ -23,6 +24,7 @@ const DashboardPage = () => {
             </div>
             <div className="dashboard-bottom">
                 <RecentCustomers />
+                <IncomeExpenses />
             </div>
         </div>
     )

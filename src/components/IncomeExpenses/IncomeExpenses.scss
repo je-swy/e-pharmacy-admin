@@ -1,0 +1,35 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.badge {
+    display: block;
+    text-align: center;
+    width: 80px;
+    padding: 4px 0;
+    border-radius: $radius-full;
+    font-size: 12px;
+
+    &--expense {
+        color: $color-danger;
+        background-color: $color-danger-light;
+    }
+
+    &--income {
+        color: $color-primary;
+        background-color: $color-primary-light;
+    }
+
+    &--error {
+        color: $color-text;
+        background-color: $color-gray-1;
+    }
+}
+
+.amount {
+    &--expense { color: $color-danger; }
+    &--income { color: $color-primary; }
+    &--error { 
+        color: $color-text;
+        text-decoration: line-through; 
+    }
+}

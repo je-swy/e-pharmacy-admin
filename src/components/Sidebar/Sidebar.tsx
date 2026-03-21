@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useNavigate, useLocation } from 'react-router-dom'
 import { Icon } from '@iconify/react'
 import { navItems } from '../../constants/navItems'
 import './Sidebar.scss'
@@ -9,7 +9,8 @@ interface SidebarProps {
 }
 
 const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
-    const [activeId, setActiveId] = useState(navItems[0]?.id)
+    const navigate = useNavigate()
+    const location = useLocation()
 
     return (
         <>
@@ -25,9 +26,9 @@ const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
                     {navItems.map((item) => (
                         <li
                             key={item.id}
-                            className={`sidebar-item ${activeId === item.id ? 'active' : ''}`}
+                            className={`sidebar-item ${location.pathname === item.path ? 'active' : ''}`}
                             onClick={() => {
-                                setActiveId(item.id)
+                                navigate(item.path)
                                 onClose()
                             }}
                         >
@@ -44,4 +45,4 @@ const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
     )
 }
 
-export default Sidebar;
+export default Sidebar

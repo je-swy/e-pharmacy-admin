@@ -1,0 +1,44 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.input {
+    width: 100%;
+    padding: 13px 16px;
+    border-radius: $radius-full;
+    border: 1px solid $color-border;
+    background-color: $color-white;
+    font-size: 14px;
+    color: $color-text;
+    transition: border-color 0.2s;
+
+    &::placeholder {
+        color: $color-text-secondary;
+    }
+
+    &:focus {
+        border-color: $color-primary;
+        outline: none;
+    }
+
+    &--error {
+        border-color: $color-danger;
+    }
+
+    &-wrapper {
+        position: relative;
+        width: 100%;
+
+        .input {
+            padding-right: 44px;
+        }
+
+        &__icon {
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: $color-text-secondary;
+        }
+    }
+}

@@ -60,3 +60,17 @@
         @content;
     }
 }
+
+@mixin responsive-text($mobile, $tablet, $desktop, $weight: 400, $color: $color-text) {
+    font-size: $mobile;
+    font-weight: $weight;
+    color: $color;
+
+    @include tablet {
+        font-size: $tablet;
+    }
+
+    @include desktop {
+        font-size: $desktop;
+    }
+}

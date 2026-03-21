@@ -1,13 +1,13 @@
 @use '../../styles/variables' as *;
 @use '../../styles/mixins' as *;
 
-.recent-customers-wrapper {
+.table-wrapper {
     border-radius: $radius-lg;
-    overflow: hidden;
+    overflow-x: auto;
     border: 1px solid $color-border-light;
 }
 
-.recent-customers {
+.table {
     width: 100%;
     border-collapse: collapse;
 
@@ -15,7 +15,7 @@
         background-color: $color-green-1;
         padding: 20px;
         text-align: left;
-        @include text(18px, 600, $color-text);
+        @include responsive-text(16px, 18px, 18px, 600, $color-text);
     }
 
     thead tr th,
@@ -27,13 +27,12 @@
         &:last-child {
             border-right: none;
         }
-        
     }
 
     thead {
         background-color: $color-bg;
-        color: $color-text-secondary;
-        font-size: 12px;
+        @include responsive-text(12px, 14px, 14px, 400, $color-text-secondary);
+
         text-align: left;
     }
 
@@ -49,7 +48,11 @@
         display: inline-block;
     }
 
-    .recent-customers__name {
+    tbody tr td {
+        @include responsive-text(12px, 16px, 16px);
+    }
+
+    &__name {
         @include flex(row, 12px);
         align-items: center;
     }
