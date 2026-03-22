@@ -35,6 +35,8 @@
 
             @include text(24px, 600, $color-text);
             line-height: 34px;
+            max-width: 660px;
+
 
             img {
                 width: 95px;
@@ -77,6 +79,7 @@
 
         &-main {
             @include flex(row, 150px);
+            align-items: center;
         }
     }
 }
