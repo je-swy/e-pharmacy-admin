@@ -1,11 +1,12 @@
-import orders from '../../data/orders.json'
-import Table from '../../components/Table/Table'
-import './AllOrdersPage.scss'
 import { useFilter } from '../../hooks/useFilter'
+import products from '../../data/products.json'
+import Table from '../../components/Table/Table'
+import './AllProductsPage.scss'
+import { Icon } from '@iconify/react'
 
-const AllOrdersPage = () => {
+const AllProductsPage = () => {
     // filter
-    const { filter, handleFilter, paginatedData, currentPage, setCurrentPage, totalPages } = useFilter(orders, 'name')
+    const { filter, handleFilter, paginatedData, currentPage, setCurrentPage, totalPages } = useFilter(products, 'name')
 
     return (
         <div className="orders main-content-wrapper">
@@ -13,34 +14,39 @@ const AllOrdersPage = () => {
                 <input
                     type="text"
                     className="input"
-                    placeholder="User Name"
+                    placeholder="Product Name"
                     value={filter}
                     onChange={e => handleFilter(e.target.value)}
                 />
                 <button className="btn btn--primary">Filter</button>
             </div>
             <Table
-                title="All Orders"
+                title="All products"
                 columns={[
                     {
-                        key: 'name', label: 'User Info', render: (_, row) => (
+                        key: 'name', label: 'Product Info', render: (_, row) => (
                             <div className="table__name">
                                 <img src={row.photo} alt={row.name} />
                                 <span>{row.name}</span>
                             </div>
                         )
                     },
-                    { key: 'address', label: 'Address' },
-                    { key: 'products', label: 'Products' },
-                    { key: 'order_date', label: 'Order date' },
+                    { key: 'category', label: 'Category' },
+                    { key: 'stock', label: 'Stock' },
+                    { key: 'suppliers', label: 'Suppliers' },
                     { key: 'price', label: 'Price' },
                     {
-                        key: 'status',
-                        label: 'Status',
-                        render: (value) => (
-                            <span className={`badge badge--${String(value).toLowerCase()}`}>
-                                {String(value)}
-                            </span>
+                        key: 'id',
+                        label: 'Action',
+                        render: (_, row) => (
+                            <div className="table__actions">
+                                <button className="table__action-btn table__action-btn--edit">
+                                    <Icon icon="mdi:pencil" />
+                                </button>
+                                <button className="table__action-btn table__action-btn--delete">
+                                    <Icon icon="mdi:trash-can-outline" />
+                                </button>
+                            </div>
                         )
                     },
                 ]}
@@ -59,4 +65,4 @@ const AllOrdersPage = () => {
     )
 }
 
-export default AllOrdersPage
+export default AllProductsPage

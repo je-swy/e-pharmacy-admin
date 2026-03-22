@@ -55,5 +55,39 @@
     &__name {
         @include flex(row, 12px);
         align-items: center;
+        flex-wrap: wrap;
+    }
+
+    &__actions {
+        @include flex(row, 8px);
+        align-items: center;
+    }
+
+    &__action-btn {
+        @include flex-center;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        cursor: pointer;
+
+        &--edit {
+            border: 1px solid $color-primary;
+            color: $color-primary;
+
+            svg {
+                width: 16px;
+                height: 16px;
+            }
+        }
+
+        &--delete {
+            border: 1px solid $color-danger;
+            color: $color-danger;
+
+            svg {
+                width: 16px;
+                height: 16px;
+            }
+        }
     }
 }

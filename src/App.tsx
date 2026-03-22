@@ -4,7 +4,7 @@ import DashboardPage from './pages/DashboardPage/DashboardPage';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import LoginPage from './pages/LoginPage/LoginPage';
 import AllOrdersPage from './pages/AllOrdersPage/AllOrdersPage';
-
+import AllProductsPage from './pages/AllProductsPage/AllProductsPage';
 
 function App() {
     return (
@@ -16,7 +16,7 @@ function App() {
                         <Route index element={<DashboardPage />} />
                         <Route path="dashboard" element={<DashboardPage />} />
                         <Route path="orders" element={<AllOrdersPage />} />
-                        <Route path="products" element={<div>Products page</div>} />
+                        <Route path="products" element={<AllProductsPage/>} />
                         <Route path="suppliers" element={<div>Suppliers page</div>} />
                         <Route path="customers" element={<div>Customers page</div>} />
                     </Route>
