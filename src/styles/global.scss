@@ -11,3 +11,15 @@ body {
     color: $color-text;
     background-color: $color-bg;
 }
+
+.input-group {
+    display: flex;
+    gap: 10px;
+    max-width: 354px;
+}
+
+.main-content-wrapper {
+    padding: 75px 40px 0 40px;
+    @include flex(column, flex-start);
+    gap: 40px;
+}

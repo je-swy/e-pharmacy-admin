@@ -1,0 +1,57 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.badge--completed {
+    color: $color-completed;
+    background-color: rgba($color-completed, 0.1);
+}
+
+.badge--confirmed {
+    color: $color-confirmed;
+    background-color: rgba($color-confirmed, 0.1);
+}
+
+.badge--pending {
+    color: $color-pending;
+    background-color: rgba($color-pending, 0.1);
+}
+
+.badge--cancelled {
+    color: $color-cancelled;
+    background-color: rgba($color-cancelled, 0.1);
+}
+
+.badge--processing {
+    color: $color-processing;
+    background-color: rgba($color-processing, 0.1);
+}
+
+.badge--shipped {
+    color: $color-shipped;
+    background-color: rgba(112, 166, 232, 0.1);
+}
+
+.badge--delivered {
+    color: $color-delivered;
+    background-color: rgba(39, 174, 96, 0.1);
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 16px;
+
+    &__btn {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: $color-gray-1;
+        cursor: pointer;
+        transition: background-color 0.2s;
+
+        &.active {
+            background-color: $color-primary;
+        }
+    }
+}
