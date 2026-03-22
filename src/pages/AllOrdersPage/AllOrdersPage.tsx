@@ -41,7 +41,14 @@ const AllOrdersPage = () => {
             <Table
                 title="All Orders"
                 columns={[
-                    { key: 'name', label: 'User Info' },
+                    {
+                        key: 'name', label: 'User Info', render: (_, row) => (
+                            <div className="table__name">
+                                <img src={row.photo} alt={row.name} />
+                                <span>{row.name}</span>
+                            </div>
+                        )
+                    },
                     { key: 'address', label: 'Address' },
                     { key: 'products', label: 'Products' },
                     { key: 'order_date', label: 'Order date' },
