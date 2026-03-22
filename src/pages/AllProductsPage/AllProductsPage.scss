@@ -1,3 +1,17 @@
 @use '../../styles/variables' as *;
 @use '../../styles/mixins' as *;
 
+.products-header-wrapper {
+    @include flex-between;
+}
+
+.products-btn {
+    @include flex (row, 8px);
+    align-items: center;
+    flex-wrap: nowrap;
+
+    .btn {
+        aspect-ratio: 1/1;
+        width: 42px;
+    }
+}
