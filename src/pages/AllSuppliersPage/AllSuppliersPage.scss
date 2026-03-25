@@ -1,0 +1,16 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.supplier-header-wrapper {
+    @include flex-between;
+}
+
+.badge--active {
+    color: $color-completed;
+    background-color: rgba($color-completed, 0.1);
+}
+
+.badge--deactive {
+    color: $color-cancelled;
+    background-color: rgba($color-cancelled, 0.1);
+}
